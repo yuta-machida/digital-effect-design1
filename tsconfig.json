@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-		"target": "es2016",
-    "outDir": "./assets/js",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "target": "es2016",
+    "outDir": "src/assets/js",
     "sourceMap": false,
-		"strict": true
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-	"include": [
-		"./assets/ts/**/*"
-	],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/assets/ts/**/*"],
+  "exclude": ["node_modules"]
 }

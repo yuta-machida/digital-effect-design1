@@ -1,119 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
-    <link rel="stylesheet" href="./assets/css/animation.css">
+    <link rel="stylesheet" href="./src/assets/css/animation.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <section class="mv --bottle">
-        <h1 class="mv__title">
-            <span>
-                <span class="mv__title --color">あらゆる</span>ものを<span class="mv__title --color">循環</span>させる
-            </span>
-            <span class="mv__title --sub">
-                We <span class="mv__title --color">c</span>irculate our <span class="mv__title --color">w</span>orld
-            </span>
-        </h1>
+      <h1 class="mv__title">
+        <span>
+          <span class="mv__title --color">あらゆる</span>ものを<span
+            class="mv__title --color"
+            >循環</span
+          >させる
+        </span>
+        <span class="mv__title-sub">
+          We <span class="mv__title --color">c</span>irculate our
+          <span class="mv__title --color">w</span>orld
+        </span>
+      </h1>
 
-        <div class="animation">
-            <!-- svgボタン -->
-            <svg class="animation__svg" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="gradient-bottle">
-                      <stop offset="0%" stop-color="#BDE5E9" stop-opacity="0" />
-                      <stop offset="50%" stop-color="#BDE5E9" stop-opacity="0.5" />
-                      <stop offset="100%" stop-color="#BDE5E9" stop-opacity="0" />
-                    </linearGradient>
-                    <linearGradient id="gradient-collect">
-                      <stop offset="0%" stop-color="#E1D7B3" stop-opacity="0" />
-                      <stop offset="50%" stop-color="#E1D7B3" stop-opacity="0.5" />
-                      <stop offset="100%" stop-color="#E1D7B3" stop-opacity="0" />
-                    </linearGradient>
-                    <linearGradient id="gradient-recycling">
-                      <stop offset="0%" stop-color="#B8EEA0" stop-opacity="0" />
-                      <stop offset="50%" stop-color="#B8EEA0" stop-opacity="0.5" />
-                      <stop offset="100%" stop-color="#B8EEA0" stop-opacity="0" />
-                    </linearGradient>
-                  </defs>
-                <!-- アニメーション用パス -->
-                <path class="animation__animation-path" fill="none" stroke="url(#gradient-bottle)" stroke-width="7"></path>
-                <path class="animation__animation-path" fill="none" stroke="url(#gradient-collect)" stroke-width="7"></path>
-                <path class="animation__animation-path" fill="none" stroke="url(#gradient-recycling)" stroke-width="7"></path>
-                <!-- ボタン用パス -->
-                <path class="animation__button-path" d="M 96.228,571.195 A 410,410 0 0,1 210.086,210.086" fill="none" stroke="#BDE5E9" stroke-width="7"></path>
-                <path class="animation__button-path" d="M 65.333,616.468 A 450,450 0 0,1 155.280,210.745" fill="none" stroke="#E1D7B3" stroke-width="7"></path>
-                <path class="animation__button-path" d="M 10,500 A 490,490 0 0,1 218.947,98.615" fill="none" stroke="#B8EEA0" stroke-width="7"></path>
-            </svg>
-            <!-- ハニカム -->
-            <div class="animation__honeycomb">
-                <div class="animation__honeycomb-row">
-                    <div class="animation__hexagon-button-wrapper">
-                        <div class="animation__hexagon-button --active">
-                            <p class="animation__hexagon-text">
-                                <span>ボトル</span>
-                                <span>to</span>
-                                <span>ボトル</span>
-                            </p>
-                        </div>
-                        <div class="animation__hexagon-button">
-                            <p class="animation__hexagon-text">回収</p>
-                        </div>
-                        <div class="animation__hexagon-button">
-                            <p class="animation__hexagon-text">リサイクル</p>
-                        </div>
-                        <div class="animation__slide-box"></div>
-                    </div>
-                    <div class="animation__hexagon-wrapper">
-                        <div class="animation__hexagon-shadow"></div>
-                        <div class="animation__hexagon"></div>
-                    </div>
-                </div>
-                <div class="animation__honeycomb-row --second">
-                    <div class="animation__hexagon-wrapper">
-                        <div class="animation__hexagon-shadow"></div>
-                        <div class="animation__hexagon"></div>
-                    </div>
-                    <div class="animation__hexagon-wrapper">
-                        <div class="animation__hexagon-shadow"></div>
-                        <div class="animation__hexagon"></div>
-                    </div>
-                    <div class="animation__hexagon-wrapper">
-                        <div class="animation__hexagon-shadow"></div>
-                        <div class="animation__hexagon"></div>
-                    </div>
-                </div>
-                <div class="animation__honeycomb-row --third">
-                    <div class="animation__hexagon-wrapper --hide">
-                        <div class="animation__hexagon-shadow"></div>
-                        <div class="animation__hexagon"></div>
-                    </div>
-                    <div class="animation__hexagon-wrapper">
-                        <div class="animation__hexagon-shadow"></div>
-                        <div class="animation__hexagon"></div>
-                    </div>
-                </div>
+      <div class="animation">
+        <!-- svgボタン -->
+        <svg
+          class="animation__svg"
+          viewBox="0 0 1000 1000"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="gradient-bottle">
+              <stop offset="0%" stop-color="#BDE5E9" stop-opacity="0" />
+              <stop offset="50%" stop-color="#BDE5E9" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#BDE5E9" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient id="gradient-collect">
+              <stop offset="0%" stop-color="#E1D7B3" stop-opacity="0" />
+              <stop offset="50%" stop-color="#E1D7B3" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#E1D7B3" stop-opacity="0" />
+            </linearGradient>
+            <linearGradient id="gradient-recycling">
+              <stop offset="0%" stop-color="#B8EEA0" stop-opacity="0" />
+              <stop offset="50%" stop-color="#B8EEA0" stop-opacity="0.5" />
+              <stop offset="100%" stop-color="#B8EEA0" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <!-- アニメーション用パス -->
+          <path
+            class="animation__animation-path"
+            fill="none"
+            stroke="url(#gradient-bottle)"
+            stroke-width="7"
+          ></path>
+          <path
+            class="animation__animation-path"
+            fill="none"
+            stroke="url(#gradient-collect)"
+            stroke-width="7"
+          ></path>
+          <path
+            class="animation__animation-path"
+            fill="none"
+            stroke="url(#gradient-recycling)"
+            stroke-width="7"
+          ></path>
+          <!-- ボタン用パス -->
+          <path
+            class="animation__button-path"
+            d="M 96.228,571.195 A 410,410 0 0,1 210.086,210.086"
+            fill="none"
+            stroke="#BDE5E9"
+            stroke-width="7"
+          ></path>
+          <path
+            class="animation__button-path"
+            d="M 65.333,616.468 A 450,450 0 0,1 155.280,210.745"
+            fill="none"
+            stroke="#E1D7B3"
+            stroke-width="7"
+          ></path>
+          <path
+            class="animation__button-path"
+            d="M 10,500 A 490,490 0 0,1 218.947,98.615"
+            fill="none"
+            stroke="#B8EEA0"
+            stroke-width="7"
+          ></path>
+        </svg>
+        <!-- ハニカム -->
+        <div class="animation__honeycomb">
+          <div class="animation__honeycomb-row">
+            <div class="animation__hexagon-button-wrapper">
+              <div class="animation__hexagon-button --active">
+                <p class="animation__hexagon-text">
+                  <span>ボトル</span>
+                  <span>to</span>
+                  <span>ボトル</span>
+                </p>
+              </div>
+              <div class="animation__hexagon-button">
+                <p class="animation__hexagon-text">回収</p>
+              </div>
+              <div class="animation__hexagon-button">
+                <p class="animation__hexagon-text">リサイクル</p>
+              </div>
+              <div class="animation__slide-box"></div>
             </div>
+            <div class="animation__hexagon-wrapper">
+              <div class="animation__hexagon-shadow"></div>
+              <div class="animation__hexagon"></div>
+            </div>
+          </div>
+          <div class="animation__honeycomb-row --second">
+            <div class="animation__hexagon-wrapper">
+              <div class="animation__hexagon-shadow"></div>
+              <div class="animation__hexagon"></div>
+            </div>
+            <div class="animation__hexagon-wrapper">
+              <div class="animation__hexagon-shadow"></div>
+              <div class="animation__hexagon"></div>
+            </div>
+            <div class="animation__hexagon-wrapper">
+              <div class="animation__hexagon-shadow"></div>
+              <div class="animation__hexagon"></div>
+            </div>
+          </div>
+          <div class="animation__honeycomb-row --third">
+            <div class="animation__hexagon-wrapper --hide">
+              <div class="animation__hexagon-shadow"></div>
+              <div class="animation__hexagon"></div>
+            </div>
+            <div class="animation__hexagon-wrapper">
+              <div class="animation__hexagon-shadow"></div>
+              <div class="animation__hexagon"></div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- モーダル -->
-         <div class="mv__modal">
-
-         </div>
-         <div class="mv__modal">
-
-         </div>
-         <div class="mv__modal">
-
-         </div>
-
+      <!-- モーダル -->
+      <div class="mv__modal"></div>
+      <div class="mv__modal"></div>
+      <div class="mv__modal"></div>
     </section>
     <div class="top"></div>
-    <script type="module" src="/assets/js/config-hex.js"></script>
-    <script type="module" src="/assets/js/config-svg.js"></script>
-    <script type="module" src="/assets/js/animation-hex.js"></script>
-    <script type="module" src="/assets/js/animation-svg.js"></script>
-</body>
+    <script src="./src/dist/bundle.js"></script>
+  </body>
 </html>
