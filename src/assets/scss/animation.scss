@@ -1,150 +1,180 @@
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
 
-.mv{
-    width: 100%;
-    height: 95vh;
-    max-height: 700px;
-    overflow: hidden;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    &.--bottle{
-        background-image: url("/assets/img/mv-img__bottle.png");
-    }
-    &.--collect{
-        background-image: url("/assets/img/mv-img__collect.png");
-    }
-    &.--recycling{
-        background-image: url("/assets/img/mv-img__recycling.png");
-    }
-    .mv__title{
-        font-family: "Shippori Mincho B1", serif;
-        font-size: 36px;
-        font-weight: 400;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        .mv__title-sub{
-            display: inline-block;
-            font-size: 24px;
-        }
-        &.--color{
-            display: inline-block;
-            color: #22b573;
-        }
-    }
-}
-
-.animation{
+.mv {
+  width: 100%;
+  height: 95vh;
+  max-height: 700px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  &.--bottle {
+    background-image: url("/assets/img/mv-img__bottle.png");
+  }
+  &.--collect {
+    background-image: url("/assets/img/mv-img__collect.png");
+  }
+  &.--recycling {
+    background-image: url("/assets/img/mv-img__recycling.png");
+  }
+  .mv__title {
+    width: 595px;
+    font-family: "Shippori Mincho B1", serif;
+    font-size: 36px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     position: absolute;
-    right: -110px;
-    .animation__honeycomb{
-        display: flex;
-        flex-direction: column;
+    top: 245px;
+    .mv__title-main {
+      font-size: 36px;
+      &.--color {
+        color: #22b573;
+      }
     }
-    .animation__honeycomb-row{
-        display: flex;
-        justify-content: center;
-        &.--second{
-            transform: translateY(-18%);
-        }
-        &.--third{
-            transform: translateY(-36%);
-        }
+    .mv__title-sub {
+      font-size: 24px;
+      &.--color {
+        color: #22b573;
+      }
     }
-    .animation__hexagon-button-wrapper{
-        width: 15vw;
-        height: 15vw;
-        max-width: 290px;
-        max-height: 290px;
-        min-width: 200px;
-        min-height: 200px;
-        clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-        position: relative;
-    }
-    .animation__hexagon-button{
-        width: 100%;
-        height: 100%;
-        clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-        position: absolute;
-    }
-    .animation__hexagon-wrapper{
-        &.--hide{
-            opacity: 0;
-        }
-    }
-    .animation__hexagon{
-        width: 15vw;
-        height: 15vw;
-        max-width: 290px;
-        max-height: 290px;
-        min-width: 200px;
-        min-height: 200px;
-        clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-        background-color: #22b573;
-    }
-    .animation__hexagon-shadow{
-        width: 15vw;
-        height: 15vw;
-        max-width: 290px;
-        max-height: 290px;
-        min-width: 200px;
-        min-height: 200px;
-        clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
-        background-color: #333;
-        opacity: 0.8;
-        position: absolute;
-        transform: translate(5%,3%);
-    }
-
-    // svgボタン
-    .animation__svg{
-        width: 140%;
-        height: 140%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
+  }
 }
 
-.top{
+.animation {
+  position: absolute;
+  bottom: -45%;
+  right: -110px;
+  .animation__honeycomb {
+    display: flex;
+    flex-direction: column;
+  }
+  .animation__honeycomb-row {
+    display: flex;
+    justify-content: center;
+    &.--second {
+      transform: translateY(-18%);
+    }
+    &.--third {
+      transform: translateY(-36%);
+    }
+  }
+  .animation__hexagon-button-wrapper {
+    width: 20vw;
+    height: 20vw;
+    max-width: 290px;
+    max-height: 290px;
+    min-width: 230px;
+    min-height: 230px;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    position: relative;
+  }
+  .animation__hexagon-button {
     width: 100%;
-    height: 500px;
-    background-color: antiquewhite;
+    height: 100%;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &.--active {
+      z-index: 120;
+    }
+  }
+  .animation__hexagon-text {
+    font-family: "Stick", serif;
+    font-size: 40px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .animation__slide-box {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.3) rotate(30deg) translateY(-90%);
+    position: absolute;
+    z-index: 110;
+  }
+  .animation__hexagon-wrapper {
+    &.--hide {
+      opacity: 0;
+    }
+  }
+  .animation__hexagon {
+    width: 20vw;
+    height: 20vw;
+    max-width: 290px;
+    max-height: 290px;
+    min-width: 230px;
+    min-height: 230px;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    background-color: #22b573;
+  }
+  .animation__hexagon-shadow {
+    width: 20vw;
+    height: 20vw;
+    max-width: 290px;
+    max-height: 290px;
+    min-width: 230px;
+    min-height: 230px;
+    clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
+    background-color: #333;
+    opacity: 0.8;
+    position: absolute;
+    transform: translate(5%, 3%);
+  }
+
+  // svgボタン
+  .animation__svg {
+    width: 140%;
+    height: 140%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-@media screen and (max-width: 768px){
-    .mv{
-        .mv__title{
-            font-size: 24px;
-            &.--sub{
-                font-size: 12px;
-            }
-        }
+.top {
+  width: 100%;
+  height: 500px;
+  background-color: antiquewhite;
+}
+
+@media screen and (max-width: 768px) {
+  .mv {
+    .mv__title {
+      font-size: 24px;
+      &.--sub {
+        font-size: 12px;
+      }
     }
-    .animation{
-        right: -220px;
-        bottom: 0;
-        .animation__hexagon-button-wrapper{
-            width: 176px;
-            height: 176px;
-            min-width: 0;
-            min-height: 0;
-        }
-        .animation__hexagon{
-            width: 176px;
-            height: 176px;
-            min-width: 0;
-            min-height: 0;
-        }
-        .animation__hexagon-shadow{
-            width: 176px;
-            height: 176px;
-            min-width: 0;
-            min-height: 0;
-        }
+  }
+  .animation {
+    right: -220px;
+    bottom: 0;
+    .animation__hexagon-button-wrapper {
+      width: 176px;
+      height: 176px;
+      min-width: 0;
+      min-height: 0;
     }
+    .animation__hexagon {
+      width: 176px;
+      height: 176px;
+      min-width: 0;
+      min-height: 0;
+    }
+    .animation__hexagon-shadow {
+      width: 176px;
+      height: 176px;
+      min-width: 0;
+      min-height: 0;
+    }
+  }
 }

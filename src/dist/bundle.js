@@ -16,7 +16,7 @@
   \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addHexagonsColor\": () => (/* binding */ addHexagonsColor)\n/* harmony export */ });\n/* harmony import */ var _settings_config_hex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../settings/config-hex */ \"./src/assets/js/settings/config-hex.js\");\n\nfunction addHexagonsColor() {\n    console.log(_settings_config_hex__WEBPACK_IMPORTED_MODULE_0__.Hexagons);\n    console.log(_settings_config_hex__WEBPACK_IMPORTED_MODULE_0__.HexagonsColor);\n}\n\n\n//# sourceURL=webpack:///./src/assets/js/animation/Hexagon.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addHexagonsColor\": () => (/* binding */ addHexagonsColor),\n/* harmony export */   \"openModal\": () => (/* binding */ openModal)\n/* harmony export */ });\n/* harmony import */ var _settings_config_hex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../settings/config-hex */ \"./src/assets/js/settings/config-hex.js\");\n\n// 六角形の背景色を追加する関数\nfunction addHexagonsColor() {\n    _settings_config_hex__WEBPACK_IMPORTED_MODULE_0__.Hexagons.forEach((hexagon, index) => {\n        hexagon.style.backgroundColor = _settings_config_hex__WEBPACK_IMPORTED_MODULE_0__.HexagonsColor[index];\n    });\n    _settings_config_hex__WEBPACK_IMPORTED_MODULE_0__.HexButtons.forEach((button, index) => {\n        button.style.backgroundColor = _settings_config_hex__WEBPACK_IMPORTED_MODULE_0__.HexButtonColor[index];\n    });\n}\n// モーダルを開く関数\nfunction openModal() { }\n\n\n//# sourceURL=webpack:///./src/assets/js/animation/Hexagon.js?");
 
 /***/ }),
 
@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _animation_Hexagon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animation/Hexagon */ \"./src/assets/js/animation/Hexagon.js\");\n\n(0,_animation_Hexagon__WEBPACK_IMPORTED_MODULE_0__.addHexagonsColor)();\n\n\n//# sourceURL=webpack:///./src/assets/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _animation_Hexagon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animation/Hexagon */ \"./src/assets/js/animation/Hexagon.js\");\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    (0,_animation_Hexagon__WEBPACK_IMPORTED_MODULE_0__.addHexagonsColor)();\n});\n\n\n//# sourceURL=webpack:///./src/assets/js/main.js?");
 
 /***/ }),
 

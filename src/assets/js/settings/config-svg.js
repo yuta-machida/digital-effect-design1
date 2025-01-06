@@ -1,3 +1,3 @@
-export const hexagons = document.querySelectorAll(".animation__hexagon");
-export const hexButton = document.querySelectorAll(".animation__hexagon-button");
-export const hexButtonColor = ["#BDE5E9", "#E1D7B3", "#B8EEA0"];
+export const svgButtons = document.querySelectorAll(".animation__svg");
+export const animationPath = document.querySelectorAll(".animation__animation-path");
+export const buttonPath = document.querySelectorAll(".animation__button-path");

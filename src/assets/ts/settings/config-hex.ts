@@ -6,7 +6,7 @@ export const HexButtonWrapper = document.querySelector(
 );
 export const Hexagons = document.querySelectorAll(".animation__hexagon");
 export const HexText = document.querySelectorAll(".animation__hexagon-text");
-export const HexagonsColor = [
+export const HexagonsColor: string[] = [
   "#57968A",
   "#57968A",
   "#8BAC9E",
@@ -14,4 +14,4 @@ export const HexagonsColor = [
   "",
   "#B1CAC0",
 ];
-export const HexButtonColor = ["#BDE5E9", "#E1D7B3", "#B8EEA0"];
+export const HexButtonColor: string[] = ["#BDE5E9", "#E1D7B3", "#B8EEA0"];

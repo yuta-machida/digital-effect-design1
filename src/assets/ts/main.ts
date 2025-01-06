@@ -1,3 +1,5 @@
 import { addHexagonsColor } from "./animation/Hexagon";
 
-addHexagonsColor();
+document.addEventListener("DOMContentLoaded", () => {
+  addHexagonsColor();
+});

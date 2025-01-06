@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&family=Stick&family=Zen+Kaku+Gothic+New&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
@@ -20,15 +20,15 @@
   <body>
     <section class="mv --bottle">
       <h1 class="mv__title">
-        <span>
-          <span class="mv__title --color">あらゆる</span>ものを<span
-            class="mv__title --color"
+        <span class="mv__title-main">
+          <span class="mv__title-main --color">あらゆる</span>ものを<span
+            class="mv__title-main --color"
             >循環</span
           >させる
         </span>
         <span class="mv__title-sub">
-          We <span class="mv__title --color">c</span>irculate our
-          <span class="mv__title --color">w</span>orld
+          We <span class="mv__title-sub --color">c</span>irculate our
+          <span class="mv__title-sub --color">w</span>orld
         </span>
       </h1>
 
@@ -77,7 +77,8 @@
           ></path>
           <!-- ボタン用パス -->
           <path
-            class="animation__button-path"
+            class="animation__button-path --active"
+            data-target="bottle"
             d="M 96.228,571.195 A 410,410 0 0,1 210.086,210.086"
             fill="none"
             stroke="#BDE5E9"
@@ -85,6 +86,7 @@
           ></path>
           <path
             class="animation__button-path"
+            data-target="collect"
             d="M 65.333,616.468 A 450,450 0 0,1 155.280,210.745"
             fill="none"
             stroke="#E1D7B3"
@@ -92,6 +94,7 @@
           ></path>
           <path
             class="animation__button-path"
+            data-target="recycling"
             d="M 10,500 A 490,490 0 0,1 218.947,98.615"
             fill="none"
             stroke="#B8EEA0"
@@ -102,17 +105,17 @@
         <div class="animation__honeycomb">
           <div class="animation__honeycomb-row">
             <div class="animation__hexagon-button-wrapper">
-              <div class="animation__hexagon-button --active">
+              <div id="bottle" class="animation__hexagon-button --active">
                 <p class="animation__hexagon-text">
                   <span>ボトル</span>
                   <span>to</span>
                   <span>ボトル</span>
                 </p>
               </div>
-              <div class="animation__hexagon-button">
+              <div id="collect" class="animation__hexagon-button">
                 <p class="animation__hexagon-text">回収</p>
               </div>
-              <div class="animation__hexagon-button">
+              <div id="recycling" class="animation__hexagon-button">
                 <p class="animation__hexagon-text">リサイクル</p>
               </div>
               <div class="animation__slide-box"></div>

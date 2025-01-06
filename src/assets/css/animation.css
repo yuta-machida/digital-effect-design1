@@ -21,24 +21,32 @@ body {
   background-image: url("/assets/img/mv-img__recycling.png");
 }
 .mv .mv__title {
+  width: 595px;
   font-family: "Shippori Mincho B1", serif;
   font-size: 36px;
   font-weight: 400;
   display: flex;
   flex-direction: column;
   text-align: center;
+  position: absolute;
+  top: 245px;
+}
+.mv .mv__title .mv__title-main {
+  font-size: 36px;
+}
+.mv .mv__title .mv__title-main.--color {
+  color: #22b573;
 }
 .mv .mv__title .mv__title-sub {
-  display: inline-block;
   font-size: 24px;
 }
-.mv .mv__title.--color {
-  display: inline-block;
+.mv .mv__title .mv__title-sub.--color {
   color: #22b573;
 }
 
 .animation {
   position: absolute;
+  bottom: -45%;
   right: -110px;
 }
 .animation .animation__honeycomb {
@@ -56,12 +64,12 @@ body {
   transform: translateY(-36%);
 }
 .animation .animation__hexagon-button-wrapper {
-  width: 15vw;
-  height: 15vw;
+  width: 20vw;
+  height: 20vw;
   max-width: 290px;
   max-height: 290px;
-  min-width: 200px;
-  min-height: 200px;
+  min-width: 230px;
+  min-height: 230px;
   -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
           clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   position: relative;
@@ -72,28 +80,50 @@ body {
   -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
           clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   position: absolute;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.animation .animation__hexagon-button.--active {
+  z-index: 120;
+}
+.animation .animation__hexagon-text {
+  font-family: "Stick", serif;
+  font-size: 40px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.animation .animation__slide-box {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.3) rotate(30deg) translateY(-90%);
+  position: absolute;
+  z-index: 110;
 }
 .animation .animation__hexagon-wrapper.--hide {
   opacity: 0;
 }
 .animation .animation__hexagon {
-  width: 15vw;
-  height: 15vw;
+  width: 20vw;
+  height: 20vw;
   max-width: 290px;
   max-height: 290px;
-  min-width: 200px;
-  min-height: 200px;
+  min-width: 230px;
+  min-height: 230px;
   -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
           clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   background-color: #22b573;
 }
 .animation .animation__hexagon-shadow {
-  width: 15vw;
-  height: 15vw;
+  width: 20vw;
+  height: 20vw;
   max-width: 290px;
   max-height: 290px;
-  min-width: 200px;
-  min-height: 200px;
+  min-width: 230px;
+  min-height: 230px;
   -webkit-clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
           clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
   background-color: #333;
@@ -145,4 +175,4 @@ body {
     min-width: 0;
     min-height: 0;
   }
-}/*# sourceMappingURL=animation.css.map */
+}
