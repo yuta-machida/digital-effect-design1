@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build:ts": "tsc",
+    "build:webpack": "webpack",
+    "build": "npm run build:ts && npm run build:webpack",
+    "watch": "tsc --watch & webpack --watch"
+  }
+}
