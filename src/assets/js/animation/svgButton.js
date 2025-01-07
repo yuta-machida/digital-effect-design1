@@ -1,4 +1,4 @@
-import { mv, buttonPath, } from "../settings/config-svg";
+import { mv, animationPath, buttonPath, cx, cy, pathAttribute, } from "../settings/config-svg";
 import { HexButtonColor } from "../settings/config-hex";
 let activeSvg = document.querySelector(// アクティブ状態のsvgボタン
 ".animation__button-path.--active");
@@ -27,12 +27,49 @@ function slideAnimation(activeHex, animationHex, color) {
 }
 // 背景画像を変えるアニメーション関数
 function changeImage(beforeClassName, afterClassName) {
-    console.log(beforeClassName);
-    console.log(afterClassName);
     mv === null || mv === void 0 ? void 0 : mv.classList.remove(`--${beforeClassName}`);
     mv === null || mv === void 0 ? void 0 : mv.classList.add(`--${afterClassName}`);
 }
 // SVGボタンのアニメーション関数
+function rotateAnimation() {
+    animationPath.forEach((path, index) => {
+        const radian = Math.PI / 180;
+        const r = pathAttribute[index].radius;
+        const initialStartAngle = pathAttribute[index].startAngle;
+        const initialEndAngle = pathAttribute[index].endAngle;
+        let rotationAngle = 0;
+        const rotationSpeed = 8;
+        // アニメーション用パスのd属性を更新する関数
+        function updatePath() {
+            if (rotationAngle < -360) {
+                return;
+            }
+            const currentStartAngle = initialStartAngle + rotationAngle;
+            const currentEndAngle = initialEndAngle + rotationAngle;
+            const x1 = cx + r * Math.cos(currentStartAngle * radian);
+            const y1 = cy + r * Math.sin(currentStartAngle * radian);
+            const x2 = cx + r * Math.cos(currentEndAngle * radian);
+            const y2 = cy + r * Math.sin(currentEndAngle * radian);
+            const d = `M ${x1},${y1} A ${r},${r} 0 0,1 ${x2},${y2}`;
+            path.setAttribute("d", d);
+            rotationAngle -= rotationSpeed;
+            requestAnimationFrame(updatePath);
+        }
+        function fadeoutPath() {
+            const delay = 600;
+            buttonPath.forEach((button) => {
+                button.style.transition = "opacity 0s";
+                button.style.opacity = "0";
+                setTimeout(() => {
+                    button.style.transition = "opacity .7s";
+                    button.style.opacity = "1";
+                }, delay);
+            });
+        }
+        updatePath();
+        fadeoutPath();
+    });
+}
 // SVGボタンクリック時のアニメーション実行関数
 export function buttonClickAnimation() {
     buttonPath.forEach((button, index) => {
@@ -43,6 +80,7 @@ export function buttonClickAnimation() {
             const animationHex = document.querySelector(`#${afterId}`); // 次にアクティブ状態にするhexボタン
             slideAnimation(activeHex, animationHex, HexButtonColor[index]); // スライドアニメーション実行
             changeImage(beforeId, afterId); // 背景画像を変えるアニメーション関数実行
+            rotateAnimation(); // SVGボタンの回転アニメーションを実行
             // アクティブ状態のsvgボタンとhexボタンを上書き
             activeSvg = button;
             activeHex = animationHex;
