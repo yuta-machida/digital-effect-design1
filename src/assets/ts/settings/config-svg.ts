@@ -1,3 +1,4 @@
+export const mv = document.querySelector<HTMLElement>(".mv");
 export const svgButtons = document.querySelectorAll(".animation__svg");
 export const animationPath = document.querySelectorAll(
   ".animation__animation-path"

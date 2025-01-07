@@ -20,13 +20,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/assets/js/animation/svgButton.js":
+/*!**********************************************!*\
+  !*** ./src/assets/js/animation/svgButton.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"buttonClickAnimation\": () => (/* binding */ buttonClickAnimation)\n/* harmony export */ });\n/* harmony import */ var _settings_config_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../settings/config-svg */ \"./src/assets/js/settings/config-svg.js\");\n/* harmony import */ var _settings_config_hex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../settings/config-hex */ \"./src/assets/js/settings/config-hex.js\");\n\n\nlet activeSvg = document.querySelector(// アクティブ状態のsvgボタン\n\".animation__button-path.--active\");\nlet activeHex = document.querySelector(// アクティブ状態のhexボタン\n\".animation__hexagon-button.--active\");\n// スライドアニメーション関数\nfunction slideAnimation(activeHex, animationHex, color) {\n    const slideBox = document.querySelector(\".animation__slide-box\");\n    activeHex.classList.remove(\"--active\");\n    activeHex.classList.add(\"--middle\");\n    slideBox.style.backgroundColor = color;\n    slideBox.animate([\n        { transform: \"scale(1.3) rotate(30deg) translateY(-90%)\" },\n        { transform: \"scale(1.3) rotate(30deg) translateY(0%)\" },\n    ], {\n        duration: 500,\n        fill: \"forwards\",\n    });\n    setTimeout(() => {\n        activeHex.classList.remove(\"--middle\");\n        animationHex.classList.add(\"--active\");\n        animationHex.animate([{ opacity: 0 }, { opacity: 1 }], {\n            duration: 500,\n        });\n    }, 500);\n}\n// 背景画像を変えるアニメーション関数\nfunction changeImage(beforeClassName, afterClassName) {\n    console.log(beforeClassName);\n    console.log(afterClassName);\n    _settings_config_svg__WEBPACK_IMPORTED_MODULE_0__.mv === null || _settings_config_svg__WEBPACK_IMPORTED_MODULE_0__.mv === void 0 ? void 0 : _settings_config_svg__WEBPACK_IMPORTED_MODULE_0__.mv.classList.remove(`--${beforeClassName}`);\n    _settings_config_svg__WEBPACK_IMPORTED_MODULE_0__.mv === null || _settings_config_svg__WEBPACK_IMPORTED_MODULE_0__.mv === void 0 ? void 0 : _settings_config_svg__WEBPACK_IMPORTED_MODULE_0__.mv.classList.add(`--${afterClassName}`);\n}\n// SVGボタンのアニメーション関数\n// SVGボタンクリック時のアニメーション実行関数\nfunction buttonClickAnimation() {\n    _settings_config_svg__WEBPACK_IMPORTED_MODULE_0__.buttonPath.forEach((button, index) => {\n        button.addEventListener(\"click\", () => {\n            const clickedSvg = button; // クリックされたsvgボタン\n            const beforeId = activeSvg === null || activeSvg === void 0 ? void 0 : activeSvg.dataset.target; // アクティブ状態のsvgボタンのdata-target\n            const afterId = clickedSvg.dataset.target; // クリックされたsvgボタンのdata-target\n            const animationHex = document.querySelector(`#${afterId}`); // 次にアクティブ状態にするhexボタン\n            slideAnimation(activeHex, animationHex, _settings_config_hex__WEBPACK_IMPORTED_MODULE_1__.HexButtonColor[index]); // スライドアニメーション実行\n            changeImage(beforeId, afterId); // 背景画像を変えるアニメーション関数実行\n            // アクティブ状態のsvgボタンとhexボタンを上書き\n            activeSvg = button;\n            activeHex = animationHex;\n        });\n    });\n}\n\n\n//# sourceURL=webpack:///./src/assets/js/animation/svgButton.js?");
+
+/***/ }),
+
 /***/ "./src/assets/js/main.js":
 /*!*******************************!*\
   !*** ./src/assets/js/main.js ***!
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _animation_Hexagon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animation/Hexagon */ \"./src/assets/js/animation/Hexagon.js\");\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    (0,_animation_Hexagon__WEBPACK_IMPORTED_MODULE_0__.addHexagonsColor)();\n});\n\n\n//# sourceURL=webpack:///./src/assets/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _animation_Hexagon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./animation/Hexagon */ \"./src/assets/js/animation/Hexagon.js\");\n/* harmony import */ var _animation_svgButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./animation/svgButton */ \"./src/assets/js/animation/svgButton.js\");\n\n\ndocument.addEventListener(\"DOMContentLoaded\", () => {\n    (0,_animation_Hexagon__WEBPACK_IMPORTED_MODULE_0__.addHexagonsColor)();\n    (0,_animation_svgButton__WEBPACK_IMPORTED_MODULE_1__.buttonClickAnimation)();\n});\n\n\n//# sourceURL=webpack:///./src/assets/js/main.js?");
 
 /***/ }),
 
@@ -37,6 +47,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ani
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"HexButtonColor\": () => (/* binding */ HexButtonColor),\n/* harmony export */   \"HexButtonWrapper\": () => (/* binding */ HexButtonWrapper),\n/* harmony export */   \"HexButtons\": () => (/* binding */ HexButtons),\n/* harmony export */   \"HexText\": () => (/* binding */ HexText),\n/* harmony export */   \"Hexagons\": () => (/* binding */ Hexagons),\n/* harmony export */   \"HexagonsColor\": () => (/* binding */ HexagonsColor)\n/* harmony export */ });\nconst HexButtons = document.querySelectorAll(\".animation__hexagon-button\");\nconst HexButtonWrapper = document.querySelector(\".animation__hexagon-button-wrapper\");\nconst Hexagons = document.querySelectorAll(\".animation__hexagon\");\nconst HexText = document.querySelectorAll(\".animation__hexagon-text\");\nconst HexagonsColor = [\n    \"#57968A\",\n    \"#57968A\",\n    \"#8BAC9E\",\n    \"#B1CAC0\",\n    \"\",\n    \"#B1CAC0\",\n];\nconst HexButtonColor = [\"#BDE5E9\", \"#E1D7B3\", \"#B8EEA0\"];\n\n\n//# sourceURL=webpack:///./src/assets/js/settings/config-hex.js?");
+
+/***/ }),
+
+/***/ "./src/assets/js/settings/config-svg.js":
+/*!**********************************************!*\
+  !*** ./src/assets/js/settings/config-svg.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"animationPath\": () => (/* binding */ animationPath),\n/* harmony export */   \"buttonPath\": () => (/* binding */ buttonPath),\n/* harmony export */   \"mv\": () => (/* binding */ mv),\n/* harmony export */   \"svgButtons\": () => (/* binding */ svgButtons)\n/* harmony export */ });\nconst mv = document.querySelector(\".mv\");\nconst svgButtons = document.querySelectorAll(\".animation__svg\");\nconst animationPath = document.querySelectorAll(\".animation__animation-path\");\nconst buttonPath = document.querySelectorAll(\".animation__button-path\");\n\n\n//# sourceURL=webpack:///./src/assets/js/settings/config-svg.js?");
 
 /***/ })
 

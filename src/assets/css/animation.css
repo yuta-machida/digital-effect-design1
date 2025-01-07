@@ -10,24 +10,27 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  transition: background-image 0.5s;
 }
 .mv.--bottle {
-  background-image: url("/assets/img/mv-img__bottle.png");
+  background-image: url("../img/mv-img__bottle.png");
 }
 .mv.--collect {
-  background-image: url("/assets/img/mv-img__collect.png");
+  background-image: url("../img/mv-img__collect.png");
 }
 .mv.--recycling {
-  background-image: url("/assets/img/mv-img__recycling.png");
+  background-image: url("../img/mv-img__recycling.png");
 }
 .mv .mv__title {
   width: 595px;
+  color: #fff;
   font-family: "Shippori Mincho B1", serif;
   font-size: 36px;
   font-weight: 400;
   display: flex;
   flex-direction: column;
   text-align: center;
+  row-gap: 18px;
   position: absolute;
   top: 245px;
 }
@@ -85,8 +88,11 @@ body {
   align-items: center;
   justify-content: center;
 }
-.animation .animation__hexagon-button.--active {
+.animation .animation__hexagon-button.--middle {
   z-index: 120;
+}
+.animation .animation__hexagon-button.--active {
+  z-index: 150;
 }
 .animation .animation__hexagon-text {
   font-family: "Stick", serif;
@@ -101,7 +107,7 @@ body {
   height: 100%;
   transform: scale(1.3) rotate(30deg) translateY(-90%);
   position: absolute;
-  z-index: 110;
+  z-index: 130;
 }
 .animation .animation__hexagon-wrapper.--hide {
   opacity: 0;
@@ -148,20 +154,27 @@ body {
 
 @media screen and (max-width: 768px) {
   .mv .mv__title {
-    font-size: 24px;
+    width: 100%;
+    top: 50px;
   }
-  .mv .mv__title.--sub {
-    font-size: 12px;
+  .mv .mv__title .mv__title-main {
+    font-size: 28px;
+  }
+  .mv .mv__title .mv__title-sub {
+    font-size: 20px;
   }
   .animation {
     right: -220px;
-    bottom: 0;
+    bottom: -70px;
   }
   .animation .animation__hexagon-button-wrapper {
     width: 176px;
     height: 176px;
     min-width: 0;
     min-height: 0;
+  }
+  .animation .animation__hexagon-text {
+    font-size: 25px;
   }
   .animation .animation__hexagon {
     width: 176px;
