@@ -9,8 +9,6 @@ import {
   hexKeyframes,
 } from "../settings/config-hex";
 
-const animations: Map<string, Animation[]> = new Map();
-
 // 六角形の背景色を追加する関数
 export function addHexagonsColor(): void {
   Hexagons.forEach((hexagon, index) => {
@@ -22,7 +20,7 @@ export function addHexagonsColor(): void {
 }
 
 // 六角形ボタンの拡大アニメーション
-function expandHexButton(id: string): void {
+function expandHexButton(id: string, reverse: boolean): void {
   const hexagon = HexButtonWrapper;
   const keyframes: Keyframe[] = [
     { transform: "translate(0) scale(1)" },
@@ -33,22 +31,24 @@ function expandHexButton(id: string): void {
     easing: "cubic-bezier(.96,.19,.93,.29)",
     fill: "forwards",
   };
-  hexagon?.animate(keyframes, options);
+  const expandAnimation = hexagon?.animate(keyframes, options);
+  reverse ? expandAnimation?.reverse : expandAnimation?.play;
 
   // 六角形ボタン内のテキストを透過させる関数
   function textFadeout(): void {
     HexText.forEach((text) => {
-      text.animate([{ opacity: 1 }, { opacity: 0 }], {
+      const textAnimation = text.animate([{ opacity: 1 }, { opacity: 0 }], {
         duration: 200,
         fill: "forwards",
       });
+      reverse ? textAnimation.reverse : textAnimation.play;
     });
   }
   textFadeout();
 }
 
 // ボタン以外の六角形を動かすアニメーション関数
-function moveHexagons(): void {
+function moveHexagons(reverse: boolean): void {
   HexagonsWrapper.forEach((hexagon, index) => {
     const scale: number = 0.7;
     const x: string = hexKeyframes[index].xPosition;
@@ -62,21 +62,32 @@ function moveHexagons(): void {
       easing: "ease-in",
       fill: "forwards",
     };
-    hexagon.animate(keyframes, options);
+    const animation = hexagon.animate(keyframes, options);
+
+    reverse ? animation.reverse : animation.play;
   });
 }
 
 // モーダルを開くアニメーション関数
-function openModal(id: string) {
+function openModal(id: string, reverse: boolean) {
   const modalId = `modal-${id}`;
   const modal: HTMLElement = document.querySelector(`#${modalId}`)!;
-  modal.style.display = "block";
-  setTimeout(() => {
-    modal.animate([{ opacity: 0 }, { opacity: 1 }], {
-      duration: 500,
-      fill: "forwards",
+  const openModalAnimation = modal.animate([{ opacity: 0 }, { opacity: 1 }], {
+    duration: 500,
+    fill: "forwards",
+  });
+
+  if (reverse) {
+    openModalAnimation.reverse;
+    setTimeout(() => {
+      modal.style.display = "none";
     });
-  }, 1000);
+  } else {
+    modal.style.display = "block";
+    setTimeout(() => {
+      openModalAnimation.play;
+    }, 1000);
+  }
 }
 
 // Hexボタンクリック時のアニメーション実行関数
@@ -84,17 +95,28 @@ export function hexClickAnimation(): void {
   HexButtons.forEach((hexButton) => {
     hexButton.addEventListener("click", () => {
       const id: string = hexButton.id;
-      expandHexButton(id);
-      moveHexagons();
-      openModal(id);
+      const reverse: boolean = false;
+      expandHexButton(id, reverse);
+      moveHexagons(reverse);
+      openModal(id, reverse);
     });
   });
 }
 
 // モーダル内閉じるボタンクリック時のアニメーション実行関数
 export function exitButtonClickAnimation(): void {
-  const exitButtons = document.querySelectorAll(".modal__exit-button");
+  const exitButtons = document.querySelectorAll<HTMLElement>(
+    ".modal__exit-button"
+  );
+  console.log(exitButtons);
   exitButtons.forEach((exitButton) => {
-    exitButton.addEventListener("click", () => {});
+    exitButton.addEventListener("click", () => {
+      console.log(exitButton);
+      const id: string = exitButton.dataset.exitTarget || "";
+      const reverse: boolean = true;
+      expandHexButton(id, reverse);
+      moveHexagons(reverse);
+      openModal(id, reverse);
+    });
   });
 }

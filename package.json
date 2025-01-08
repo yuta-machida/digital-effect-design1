@@ -4,5 +4,8 @@
     "build:webpack": "webpack",
     "build": "npm run build:ts && npm run build:webpack",
     "watch": "tsc --watch & webpack --watch"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5"
   }
 }

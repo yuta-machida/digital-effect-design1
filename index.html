@@ -172,7 +172,13 @@
             <p class="modal__content">
               説明文が入ります。（テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります）
             </p>
-            <button class="modal__detail-button">詳しく見る &#x2799;</button>
+            <button class="modal__detail-button">
+              <p class="modal__detail-button-text">詳しく見る</p>
+              <img
+                src="./src/assets/img/modal-icon__arrow.svg"
+                class="modal__detail-button-image"
+              />
+            </button>
           </section>
           <div class="modal__image-wrapper">
             <img
@@ -181,7 +187,7 @@
             />
           </div>
         </div>
-        <button class="modal__exit-button"></button>
+        <button data-exit-target="bottle" class="modal__exit-button"></button>
       </div>
       <!-- collect -->
       <div id="modal-collect" class="modal --collect">
@@ -199,7 +205,13 @@
             <p class="modal__content">
               説明文が入ります。（テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります）
             </p>
-            <button class="modal__detail-button">詳しく見る &#x2799;</button>
+            <button class="modal__detail-button">
+              <p class="modal__detail-button-text">詳しく見る</p>
+              <img
+                src="./src/assets/img/modal-icon__arrow.svg"
+                class="modal__detail-button-image"
+              />
+            </button>
           </section>
           <div class="modal__image-wrapper">
             <img
@@ -208,7 +220,7 @@
             />
           </div>
         </div>
-        <button class="modal__exit-button"></button>
+        <button data-exit-target="collect" class="modal__exit-button"></button>
       </div>
       <!-- recycling -->
       <div id="modal-recycling" class="modal --recycling">
@@ -243,7 +255,10 @@
             />
           </div>
         </div>
-        <button class="modal__exit-button"></button>
+        <button
+          data-exit-target="recycling"
+          class="modal__exit-button"
+        ></button>
       </div>
     </section>
     <div class="top"></div>

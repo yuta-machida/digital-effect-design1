@@ -173,6 +173,7 @@ body {
   }
   .modal__section {
     padding: 20px 0 0 7.36%;
+    flex: 1;
   }
   .modal__section-title {
     font-family: "Stick", serif;
@@ -218,6 +219,7 @@ body {
   .modal__image-wrapper {
     display: flex;
     justify-content: center;
+    flex: 1;
     .modal__image {
     }
   }

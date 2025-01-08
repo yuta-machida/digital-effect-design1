@@ -1,5 +1,4 @@
 import { HexButtons, HexButtonWrapper, Hexagons, HexagonsWrapper, HexText, HexagonsColor, HexButtonColor, hexKeyframes, } from "../settings/config-hex";
-const animations = new Map();
 // 六角形の背景色を追加する関数
 export function addHexagonsColor() {
     Hexagons.forEach((hexagon, index) => {
