@@ -104,6 +104,7 @@
         <!-- ハニカム -->
         <div class="animation__honeycomb">
           <div class="animation__honeycomb-row">
+            <!-- 六角形のボタン -->
             <div class="animation__hexagon-button-wrapper">
               <div id="bottle" class="animation__hexagon-button --active">
                 <p class="animation__hexagon-text">
@@ -153,9 +154,97 @@
       </div>
 
       <!-- モーダル -->
-      <div class="mv__modal"></div>
-      <div class="mv__modal"></div>
-      <div class="mv__modal"></div>
+      <!-- bottle -->
+      <div id="modal-bottle" class="modal --bottle">
+        <div class="modal__inner">
+          <section class="modal__section">
+            <h2 class="modal__section-title">
+              ボトル to ボトル
+              <span class="modal__section-title --sub"
+                >- bottle to bottle -</span
+              >
+            </h2>
+            <img
+              src="./src/assets/img/modal-underline__bottle.svg"
+              class="modal__under-line-image"
+            />
+            <h3 class="modal__content-title">ボトルからボトルをつくる</h3>
+            <p class="modal__content">
+              説明文が入ります。（テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります）
+            </p>
+            <button class="modal__detail-button">詳しく見る &#x2799;</button>
+          </section>
+          <div class="modal__image-wrapper">
+            <img
+              src="./src/assets/img/modal-image__bottle.png"
+              class="modal__image"
+            />
+          </div>
+        </div>
+        <button class="modal__exit-button"></button>
+      </div>
+      <!-- collect -->
+      <div id="modal-collect" class="modal --collect">
+        <div class="modal__inner">
+          <section class="modal__section">
+            <h2 class="modal__section-title">
+              回収
+              <span class="modal__section-title --sub">- collect -</span>
+            </h2>
+            <img
+              src="./src/assets/img/modal-underline__collect.svg"
+              class="modal__under-line-image"
+            />
+            <h3 class="modal__content-title">服から服をつくる</h3>
+            <p class="modal__content">
+              説明文が入ります。（テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります）
+            </p>
+            <button class="modal__detail-button">詳しく見る &#x2799;</button>
+          </section>
+          <div class="modal__image-wrapper">
+            <img
+              src="./src/assets/img/modal-image__collect.png"
+              class="modal__image"
+            />
+          </div>
+        </div>
+        <button class="modal__exit-button"></button>
+      </div>
+      <!-- recycling -->
+      <div id="modal-recycling" class="modal --recycling">
+        <div class="modal__inner">
+          <section class="modal__section">
+            <h2 class="modal__section-title">
+              リサイクル
+              <span class="modal__section-title --sub">- recycling -</span>
+            </h2>
+            <img
+              src="./src/assets/img/modal-underline__recycling.svg"
+              class="modal__under-line-image"
+            />
+            <h3 class="modal__content-title">
+              あらゆるPETを循環させてサステナブルに
+            </h3>
+            <p class="modal__content">
+              説明文が入ります。（テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります）
+            </p>
+            <button class="modal__detail-button">
+              <p class="modal__detail-button-text">詳しく見る</p>
+              <img
+                src="./src/assets/img/modal-icon__arrow.svg"
+                class="modal__detail-button-image"
+              />
+            </button>
+          </section>
+          <div class="modal__image-wrapper">
+            <img
+              src="./src/assets/img/modal-image__recycling.png"
+              class="modal__image"
+            />
+          </div>
+        </div>
+        <button class="modal__exit-button"></button>
+      </div>
     </section>
     <div class="top"></div>
     <script src="./src/dist/bundle.js"></script>

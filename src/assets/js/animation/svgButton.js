@@ -41,9 +41,8 @@ function rotateAnimation() {
         const rotationSpeed = 8;
         // アニメーション用パスのd属性を更新する関数
         function updatePath() {
-            if (rotationAngle < -360) {
+            if (rotationAngle < -360)
                 return;
-            }
             const currentStartAngle = initialStartAngle + rotationAngle;
             const currentEndAngle = initialEndAngle + rotationAngle;
             const x1 = cx + r * Math.cos(currentStartAngle * radian);
@@ -55,6 +54,7 @@ function rotateAnimation() {
             rotationAngle -= rotationSpeed;
             requestAnimationFrame(updatePath);
         }
+        // ボタン用パスの表示・非表示切り替えアニメーション関数
         function fadeoutPath() {
             const delay = 600;
             buttonPath.forEach((button) => {
@@ -71,7 +71,7 @@ function rotateAnimation() {
     });
 }
 // SVGボタンクリック時のアニメーション実行関数
-export function buttonClickAnimation() {
+export function svgClickAnimation() {
     buttonPath.forEach((button, index) => {
         button.addEventListener("click", () => {
             const clickedSvg = button; // クリックされたsvgボタン

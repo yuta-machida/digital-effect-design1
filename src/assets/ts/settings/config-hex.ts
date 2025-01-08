@@ -5,6 +5,9 @@ export const HexButtonWrapper = document.querySelector(
   ".animation__hexagon-button-wrapper"
 );
 export const Hexagons = document.querySelectorAll(".animation__hexagon");
+export const HexagonsWrapper = document.querySelectorAll(
+  ".animation__hexagon-wrapper:not(.--hide)"
+);
 export const HexText = document.querySelectorAll(".animation__hexagon-text");
 export const HexagonsColor: string[] = [
   "#57968A",
@@ -15,3 +18,26 @@ export const HexagonsColor: string[] = [
   "#B1CAC0",
 ];
 export const HexButtonColor: string[] = ["#BDE5E9", "#E1D7B3", "#B8EEA0"];
+
+export const hexKeyframes = [
+  {
+    xPosition: "150px",
+    yPosition: "100px",
+  },
+  {
+    xPosition: "-120px",
+    yPosition: "120px",
+  },
+  {
+    xPosition: "120px",
+    yPosition: "120px",
+  },
+  {
+    xPosition: "120px",
+    yPosition: "120px",
+  },
+  {
+    xPosition: "120px",
+    yPosition: "120px",
+  },
+];
