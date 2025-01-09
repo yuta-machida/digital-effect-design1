@@ -20,14 +20,16 @@ function expandHexButton(id) {
         easing: "cubic-bezier(.96,.19,.93,.29)",
         fill: "forwards",
     };
-    hexagon === null || hexagon === void 0 ? void 0 : hexagon.animate(keyframes, options);
+    const expandAnimation = hexagon === null || hexagon === void 0 ? void 0 : hexagon.animate(keyframes, options);
+    expandAnimation === null || expandAnimation === void 0 ? void 0 : expandAnimation.play;
     // 六角形ボタン内のテキストを透過させる関数
     function textFadeout() {
         HexText.forEach((text) => {
-            text.animate([{ opacity: 1 }, { opacity: 0 }], {
+            const textAnimation = text.animate([{ opacity: 1 }, { opacity: 0 }], {
                 duration: 200,
                 fill: "forwards",
             });
+            textAnimation.play;
         });
     }
     textFadeout();
@@ -54,13 +56,13 @@ function moveHexagons() {
 function openModal(id) {
     const modalId = `modal-${id}`;
     const modal = document.querySelector(`#${modalId}`);
+    const openModalAnimation = modal.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 500,
+        delay: 1000,
+        fill: "forwards",
+    });
     modal.style.display = "block";
-    setTimeout(() => {
-        modal.animate([{ opacity: 0 }, { opacity: 1 }], {
-            duration: 500,
-            fill: "forwards",
-        });
-    }, 1000);
+    openModalAnimation.play;
 }
 // Hexボタンクリック時のアニメーション実行関数
 export function hexClickAnimation() {
@@ -71,12 +73,5 @@ export function hexClickAnimation() {
             moveHexagons();
             openModal(id);
         });
-    });
-}
-// モーダル内閉じるボタンクリック時のアニメーション実行関数
-export function exitButtonClickAnimation() {
-    const exitButtons = document.querySelectorAll(".modal__exit-button");
-    exitButtons.forEach((exitButton) => {
-        exitButton.addEventListener("click", () => { });
     });
 }
