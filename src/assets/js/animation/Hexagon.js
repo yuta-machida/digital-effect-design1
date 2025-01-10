@@ -69,6 +69,7 @@ export function hexClickAnimation() {
     HexButtons.forEach((hexButton) => {
         hexButton.addEventListener("click", () => {
             const id = hexButton.id;
+            document.body.classList.add("--modal-open");
             expandHexButton(id);
             moveHexagons();
             openModal(id);

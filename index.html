@@ -18,6 +18,35 @@
     <title>Document</title>
   </head>
   <body>
+    <header class="header">
+      <img src="./src/assets/img/header_logo.png" class="header__logo-image" />
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="" class="header__nav-link">企業情報</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="" class="header__nav-link">事業領域</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="" class="header__nav-link">テクノロジー</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="" class="header__nav-link">サステナビリティ</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="" class="header__nav-link">News</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="" class="header__nav-link">採用</a>
+          </li>
+          <li class="header__nav-item --langauage">
+            JP
+            <span class="header__nav-text">/EN</span>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <section class="mv --bottle">
       <h1 class="mv__title">
         <span class="mv__title-main">
@@ -156,19 +185,29 @@
       <!-- モーダル -->
       <!-- bottle -->
       <div id="modal-bottle" class="modal --bottle">
+        <div class="modal__heading">
+          <h2 class="modal__title">
+            ボトル to ボトル
+            <span class="modal__title --sub">- bottle to bottle -</span>
+          </h2>
+          <picture>
+            <source
+              srcset="./src/assets/img/modal-underline__bottle-pc.svg"
+              media="not all and (max-width: 768px)"
+            />
+            <source
+              srcset="./src/assets/img/modal-underline__bottle-sp.svg"
+              media="(max-width: 768px)"
+            />
+            <img
+              src="./src/assets/img/modal-underline__bottle-pc.svg"
+              class="modal__under-line-image --bottle"
+            />
+          </picture>
+        </div>
         <div class="modal__inner">
           <section class="modal__section">
-            <h2 class="modal__section-title">
-              ボトル to ボトル
-              <span class="modal__section-title --sub"
-                >- bottle to bottle -</span
-              >
-            </h2>
-            <img
-              src="./src/assets/img/modal-underline__bottle.svg"
-              class="modal__under-line-image"
-            />
-            <h3 class="modal__content-title">ボトルからボトルをつくる</h3>
+            <h3 class="modal__section-title">ボトルからボトルをつくる</h3>
             <p class="modal__content">
               説明文が入ります。（テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります）
             </p>
@@ -191,17 +230,29 @@
       </div>
       <!-- collect -->
       <div id="modal-collect" class="modal --collect">
+        <div class="modal__heading">
+          <h2 class="modal__title">
+            回収
+            <span class="modal__title --sub">- collect -</span>
+          </h2>
+          <picture>
+            <source
+              srcset="./src/assets/img/modal-underline__collect-pc.svg"
+              media="not all and (max-width: 768px)"
+            />
+            <source
+              srcset="./src/assets/img/modal-underline__collect-sp.svg"
+              media="(max-width: 768px)"
+            />
+            <img
+              src="./src/assets/img/modal-underline__collect-pc.svg"
+              class="modal__under-line-image --collect"
+            />
+          </picture>
+        </div>
         <div class="modal__inner">
           <section class="modal__section">
-            <h2 class="modal__section-title">
-              回収
-              <span class="modal__section-title --sub">- collect -</span>
-            </h2>
-            <img
-              src="./src/assets/img/modal-underline__collect.svg"
-              class="modal__under-line-image"
-            />
-            <h3 class="modal__content-title">服から服をつくる</h3>
+            <h3 class="modal__section-title">服から服をつくる</h3>
             <p class="modal__content">
               説明文が入ります。（テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります）
             </p>
@@ -224,17 +275,29 @@
       </div>
       <!-- recycling -->
       <div id="modal-recycling" class="modal --recycling">
+        <div class="modal__heading">
+          <h2 class="modal__title">
+            リサイクル
+            <span class="modal__title --sub">- recycling -</span>
+          </h2>
+          <picture>
+            <source
+              srcset="./src/assets/img/modal-underline__recycling-pc.svg"
+              media="not all and (max-width: 768px)"
+            />
+            <source
+              srcset="./src/assets/img/modal-underline__recycling-sp.svg"
+              media="(max-width: 768px)"
+            />
+            <img
+              src="./src/assets/img/modal-underline__recycling-pc.svg"
+              class="modal__under-line-image --recycling"
+            />
+          </picture>
+        </div>
         <div class="modal__inner">
           <section class="modal__section">
-            <h2 class="modal__section-title">
-              リサイクル
-              <span class="modal__section-title --sub">- recycling -</span>
-            </h2>
-            <img
-              src="./src/assets/img/modal-underline__recycling.svg"
-              class="modal__under-line-image"
-            />
-            <h3 class="modal__content-title">
+            <h3 class="modal__section-title">
               あらゆるPETを循環させてサステナブルに
             </h3>
             <p class="modal__content">

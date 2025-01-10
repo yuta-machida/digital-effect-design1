@@ -77,6 +77,7 @@ export function exitButtonClickAnimation(): void {
   exitButtons.forEach((exitButton) => {
     exitButton.addEventListener("click", () => {
       const id: string = exitButton.dataset.exitTarget || "";
+      document.body.classList.remove("--modal-open");
       reductionHexButton(id);
       returnHexagons();
       closeModal(id);
