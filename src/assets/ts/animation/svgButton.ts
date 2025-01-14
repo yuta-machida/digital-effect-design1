@@ -70,10 +70,10 @@ function rotateAnimation(): void {
 
       const currentStartAngle = initialStartAngle + rotationAngle;
       const currentEndAngle = initialEndAngle + rotationAngle;
-      const x1: number = cx + r * Math.cos(currentStartAngle * radian);
-      const y1: number = cy + r * Math.sin(currentStartAngle * radian);
-      const x2: number = cx + r * Math.cos(currentEndAngle * radian);
-      const y2: number = cy + r * Math.sin(currentEndAngle * radian);
+      const x1: number = cx + r * Math.cos(currentStartAngle * radian); // svg描写開始位置のx座標
+      const y1: number = cy + r * Math.sin(currentStartAngle * radian); // svg描写開始位置のy座標
+      const x2: number = cx + r * Math.cos(currentEndAngle * radian); // svg描写終了位置のx座標
+      const y2: number = cy + r * Math.sin(currentEndAngle * radian); // svg描写終了位置のy座標
       const d: string = `M ${x1},${y1} A ${r},${r} 0 0,1 ${x2},${y2}`;
       path.setAttribute("d", d);
       rotationAngle -= rotationSpeed;

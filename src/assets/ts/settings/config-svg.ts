@@ -8,22 +8,22 @@ export const animationPath = document.querySelectorAll<HTMLElement>(
   ".animation__animation-path"
 );
 
-export const cx: number = 500;
-export const cy: number = 500;
+export const cx: number = 500; // svg要素の描写中心 x座標
+export const cy: number = 500; // svg要素の描写中心 y座標
 export const pathAttribute = [
   {
     radius: 400,
-    startAngle: 160,
+    startAngle: 170,
     endAngle: 230,
   },
   {
     radius: 430,
-    startAngle: 150,
+    startAngle: 160,
     endAngle: 220,
   },
   {
     radius: 460,
-    startAngle: 170,
+    startAngle: 180,
     endAngle: 240,
   },
 ];

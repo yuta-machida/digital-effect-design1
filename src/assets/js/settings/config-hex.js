@@ -12,6 +12,7 @@ export const HexagonsColor = [
     "#B1CAC0",
 ];
 export const HexButtonColor = ["#BDE5E9", "#E1D7B3", "#B8EEA0"];
+// 六角形ボタン以外のアニメーション終了位置を定義
 export const hexKeyframes = [
     {
         xPosition: "150px",
