@@ -255,7 +255,6 @@ body.--modal-open {
 }
 .modal .modal__under-line-image.--collect {
   top: 60%;
-  left: -2%;
 }
 .modal .modal__under-line-image.--recycling {
   top: 35%;
@@ -422,21 +421,38 @@ body.--modal-open {
     min-height: 0;
   }
   .modal {
-    padding-top: 10px;
+    padding-top: 35px;
   }
   .modal .modal__heading {
+    max-width: 330px;
     padding-left: 0;
     display: flex;
     flex-direction: column;
+    margin: 16px auto 0;
+    position: relative;
   }
   .modal .modal__title {
     font-size: 32px;
     text-align: center;
     -moz-column-gap: 5px;
          column-gap: 5px;
+    justify-content: center;
   }
   .modal .modal__title.--sub {
     font-size: 10px;
+  }
+  .modal .modal__under-line-image {
+    position: absolute;
+  }
+  .modal .modal__under-line-image.--bottle {
+    left: 0%;
+  }
+  .modal .modal__under-line-image.--collect {
+    left: 30%;
+  }
+  .modal .modal__under-line-image.--recycling {
+    top: 45%;
+    left: 20%;
   }
   .modal .modal__inner {
     display: block;
@@ -473,5 +489,15 @@ body.--modal-open {
   }
   .modal .modal__detail-button .modal__detail-button-image {
     width: 22px;
+  }
+  .modal .modal__exit-button {
+    width: 32px;
+    height: 32px;
+    top: 15px;
+    right: 20px;
+  }
+  .modal .modal__exit-button::before, .modal .modal__exit-button::after {
+    width: 1px;
+    height: 32px;
   }
 }
